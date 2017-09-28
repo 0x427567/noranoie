@@ -4,7 +4,7 @@ const http = require('http')
 const pug = require('pug')
 const template = pug.compileFile('./views/index.pug')
 
-const getRows = 9
+const getRows = 12
 const apiUrl = 'http://data.coa.gov.tw/Service/OpenData/AnimalOpenData.aspx?$top=' + getRows
 
 module.exports.index = (event, context, callback) => {
