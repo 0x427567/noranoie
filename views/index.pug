@@ -1,0 +1,11 @@
+extends ./layouts/layout
+
+block content
+  .row
+    each animal in animals
+      .col-sm-2
+        .card
+          img(class='card-img-top' src= animal.album_file style='height: 25rem;')
+          .card-body
+            p
+              span.card-text= '所在地：' + animal.animal_area_pkid
