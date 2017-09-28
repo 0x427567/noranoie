@@ -14,3 +14,7 @@ provider:
 functions:
   homepage:
     handler: homepage.index
+    events:
+      - http:
+          path: /
+          method: get
