@@ -18,3 +18,9 @@ functions:
       - http:
           path: /
           method: get
+  about:
+    handler: about.index
+    events:
+      - http:
+          path: /about
+          method: get
