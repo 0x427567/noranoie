@@ -1,11 +1,25 @@
 extends ./layouts/layout
 
 block content
+  include ./widgets/cityList
+  include ./widgets/bodySize
+  h1 本日之星
   .row
     each animal in animals
-      .col-sm-2
+      - let gender = (animal.animal_sex === 'M') ? '公' : '母'
+      .col-xl-2.col-lg-4.col-md-6
         .card
-          img(class='card-img-top' src= animal.album_file style='height: 25rem;')
+          a(href= './info/' + animal.animal_id)
+            img(class='card-img-top' src= animal.album_file style='height: 25rem;')
           .card-body
-            p
-              span.card-text= '所在地：' + animal.animal_area_pkid
+            ul
+              li
+                span.card-text= '城市：' + cityList[animal.animal_area_pkid]
+              li
+                span.card-text= '種類：' + animal.animal_kind
+              li
+                span.card-text= '性別：' + gender
+              li
+                span.card-text= '體型：' + bodySize[animal.animal_bodytype]
+              li
+                span.card-text= '毛色：' + animal.animal_colour
