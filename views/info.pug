@@ -10,18 +10,47 @@ block content
     li.breadcrumb-item= animal.animal_id
   .row
     - let gender = (animal.animal_sex === 'M') ? '公' : '母'
-    .col-xl-2.col-lg-4.col-md-6
-      .card
-        img.card-img-top.lozad(data-src= animal.album_file style='height:15rem;')
-        .card-body
-          ul
-            li
-              span.card-text= '城市：' + cityList[animal.animal_area_pkid]
-            li
-              span.card-text= '種類：' + animal.animal_kind
-            li
-              span.card-text= '性別：' + gender
-            li
-              span.card-text= '體型：' + bodySize[animal.animal_bodytype]
-            li
-              span.card-text= '毛色：' + animal.animal_colour
+    .col-md-12
+      table.table
+        tr
+          td(colspan='3' style='text-align:center;')
+            img.img-fluid.lozad(data-src= animal.album_file)
+        tr
+          th(scope='row') 城市
+          td= cityList[animal.animal_area_pkid]
+        tr
+          th(scope='row') 種類
+          td= animal.animal_kind
+        tr
+          th(scope='row') 性別
+          td= gender
+        tr
+          th(scope='row') 年紀
+          td= animal.animal_age
+        tr
+          th(scope='row') 毛色
+          td= animal.animal_colour
+        tr
+          th(scope='row') 體型
+          td= bodySize[animal.animal_bodytype]
+        tr
+          th(scope='row') 絕育
+          td= animal.animal_sterilization
+        tr
+          th(scope='row') 狂犬病疫苗
+          td= animal.animal_bacterin
+        tr
+          th(scope='row') 發現地點
+          td= animal.animal_foundplace
+        tr
+          th(scope='row') 備註
+          td= animal.animal_remark
+        tr
+          th(scope='row') 所屬收容所
+          td= animal.shelter_name
+        tr
+          th(scope='row') 收容所地址
+          td= animal.shelter_address
+        tr
+          th(scope='row') 收容所電話
+          td= animal.shelter_tel
