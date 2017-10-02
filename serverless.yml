@@ -13,14 +13,30 @@ provider:
 
 functions:
   homepage:
-    handler: homepage.index
+    handler: functions/homepage.index
     events:
       - http:
           path: /
           method: get
+  info:
+    handler: functions/info.index
+    events:
+      - http:
+          path: /info/{animalId}
+          method: get
+          request:
+            parameters:
+              paths:
+                animalId: true
   about:
-    handler: about.index
+    handler: functions/about.index
     events:
       - http:
           path: /about
+          method: get
+  data-gov-tw-query:
+    handler: opendata/data-gov-tw.query
+    events:
+      - http:
+          path: /opendata/data.gov.tw
           method: get

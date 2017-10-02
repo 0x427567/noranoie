@@ -1,0 +1,27 @@
+extends ./layouts/layout
+
+block content
+  include widgets/cityList
+  include widgets/bodySize
+  ol.breadcrumb
+    li.breadcrumb-item
+      a(href='/') 野良の家
+    li.breadcrumb-item 待領養動物
+    li.breadcrumb-item= animal.animal_id
+  .row
+    - let gender = (animal.animal_sex === 'M') ? '公' : '母'
+    .col-xl-2.col-lg-4.col-md-6
+      .card
+        img.card-img-top.lozad(data-src= animal.album_file style='height:15rem;')
+        .card-body
+          ul
+            li
+              span.card-text= '城市：' + cityList[animal.animal_area_pkid]
+            li
+              span.card-text= '種類：' + animal.animal_kind
+            li
+              span.card-text= '性別：' + gender
+            li
+              span.card-text= '體型：' + bodySize[animal.animal_bodytype]
+            li
+              span.card-text= '毛色：' + animal.animal_colour
