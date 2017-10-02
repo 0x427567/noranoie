@@ -1,16 +1,15 @@
 extends ./layouts/layout
 
 block content
-  include ./widgets/cityList
-  include ./widgets/bodySize
-  h1 本日之星
+  include widgets/cityList
+  include widgets/bodySize
   .row
     each animal in animals
       - let gender = (animal.animal_sex === 'M') ? '公' : '母'
       .col-xl-2.col-lg-4.col-md-6
         .card
           a(href= './info/' + animal.animal_id)
-            img(class='card-img-top' src= animal.album_file style='height: 25rem;')
+            img.card-img-top.lozad(data-src= animal.album_file style='height:15rem;')
           .card-body
             ul
               li

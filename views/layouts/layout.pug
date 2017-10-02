@@ -16,13 +16,14 @@ html
       .collapse.navbar-collapse#navbarContent
         ul.navbar-nav.mr-auto
           li.nav-item
-            a(class='nav-link' href='/animal/cat') 野良猫
-          li.nav-item
-            a(class='nav-link' href='/animal/dog') 野良犬
-          li.nav-item
             a.nav-link(href='/about') 關於我們
     .container-fluid
       block content
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js' integrity='sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=' crossorigin='anonymous')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.min.js' integrity='sha256-jpW4gXAhFvqGDD5B7366rIPD7PDbAmqq4CO0ZnHbdM4=' crossorigin='anonymous')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js' integrity='sha256-DiWJXXyq81WlPRnDfGmgYZj2aOVCKyEdJ1l+2TmDuAs=' crossorigin='anonymous')
+    block javascript
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.min.js' integrity='sha256-jpW4gXAhFvqGDD5B7366rIPD7PDbAmqq4CO0ZnHbdM4=' crossorigin='anonymous')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js' integrity='sha256-DiWJXXyq81WlPRnDfGmgYZj2aOVCKyEdJ1l+2TmDuAs=' crossorigin='anonymous')
+      script(src='https://cdn.jsdelivr.net/npm/lozad@1.0.6/dist/lozad.min.js')
+      script.
+        const observer = lozad()
+        observer.observe()
