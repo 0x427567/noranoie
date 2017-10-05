@@ -22,3 +22,13 @@ block content
                 span.card-text= '體型：' + bodySize[animal.animal_bodytype]
               li
                 span.card-text= '毛色：' + animal.animal_colour
+  .row
+    ul.pagination
+      if (currentPage === 1)
+        li.page-item.disabled
+          a.page-link(href='#') 上一頁
+      else
+        li.page-item
+          a.page-link(href='/?page=' + prePage) 上一頁
+      li.page-item
+        a.page-link(href='/?page=' + nextPage) 下一頁
