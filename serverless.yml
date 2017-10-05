@@ -13,7 +13,7 @@ provider:
 
 functions:
   homepage:
-    handler: functions/homepage.index
+    handler: functions/animal.get
     events:
       - http:
           path: /
