@@ -14,7 +14,7 @@ block content
       table.table
         tr
           td(colspan='3' style='text-align:center;')
-            img.img-fluid.lozad(data-src= animal.album_file)
+            img.img-fluid.lozad(data-src= animal.album_file onerror='this.src="https://cdn-noranoie.0x427567.com/images/error.svg"')
         tr
           th(scope='row') 城市
           td= cityList[animal.animal_area_pkid]
