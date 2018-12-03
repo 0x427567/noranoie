@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "offline": "yarn serverless offline"
   },
   "dependencies": {
     "pug": "^2.0.3"

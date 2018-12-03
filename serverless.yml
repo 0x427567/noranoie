@@ -11,6 +11,9 @@ provider:
   deploymentBucket:
     name: noranoie-deploys
 
+plugins:
+  - serverless-offline
+
 functions:
   homepage:
     handler: functions/animal.get
