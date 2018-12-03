@@ -26,7 +26,7 @@ package:
 
 functions:
   homepage:
-    handler: functions/animal.get
+    handler: services/index.handler
     events:
       - http:
           path: /
