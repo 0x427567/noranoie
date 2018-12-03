@@ -4,3 +4,10 @@ jspm_packages
 
 # Serverless directories
 .serverless
+.webpack
+
+# Log file
+*.log
+
+# MacOS
+.DS_Store
