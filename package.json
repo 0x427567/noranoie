@@ -3,6 +3,11 @@
     "test": "mocha"
   },
   "dependencies": {
-    "pug": "^2.0.0-rc.4"
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "serverless": "^1.34.1",
+    "serverless-offline": "^3.31.3"
   }
 }
