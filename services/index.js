@@ -23,7 +23,7 @@ export const handler = async (event, context, callback) => {
     const response = {
       statusCode: 200,
       headers: {
-        'Content-Type': 'text/html',
+        'Content-Type': 'text/html'
       },
       body: html
     }
