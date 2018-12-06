@@ -7,7 +7,6 @@ export const handler = async (event, context, callback) => {
 
   try {
     animal = await OpenData.view(event.pathParameters.animalId)
-    console.log(animal)
   } catch (error) {
     console.log(error.message)
   }
