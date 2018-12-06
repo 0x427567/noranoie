@@ -7,7 +7,7 @@ export const handler = async (event, context, callback) => {
 
   try {
     animals = await OpenData.list()
-  } catch(error) {
+  } catch (error) {
     console.log(error.message)
   }
 
@@ -20,17 +20,16 @@ export const handler = async (event, context, callback) => {
 
     const html = await Pug.render(options)
 
-      const response = {
-        statusCode: 200,
-        headers: {
-          'Content-Type': 'text/html',
-        },
-        body: html,
-      };
+    const response = {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'text/html',
+      },
+      body: html
+    }
 
-      return response
-
-  } catch(error) {
+    return response
+  } catch (error) {
     console.log(error.message)
   }
 }

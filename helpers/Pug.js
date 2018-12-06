@@ -25,7 +25,7 @@ export default class Pug {
 
       try {
         resolve(page(options))
-      } catch(error) {
+      } catch (error) {
         reject(error)
       }
     })
