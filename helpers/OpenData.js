@@ -14,4 +14,13 @@ export default class OpenData {
 
     return axios.get(`${apiUrl}?${params}`)
   }
+
+  static async view (animalId) {
+    const params = queryString.stringify({
+      UnitId: 'QcbUEzN6E6DL',
+      animal_id: animalId
+    })
+
+    return axios.get(`${apiUrl}?${params}`)
+  }
 }

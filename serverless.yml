@@ -32,7 +32,7 @@ functions:
           path: /
           method: get
   info:
-    handler: functions/info.index
+    handler: services/info.handler
     events:
       - http:
           path: /info/{animalId}
