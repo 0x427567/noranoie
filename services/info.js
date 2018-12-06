@@ -1,12 +1,14 @@
 'use strict'
 
 import { OpenData, Pug } from '../helpers'
+import { Areas } from '../config'
 
 export const handler = async (event, context, callback) => {
   let animal
 
   try {
     animal = await OpenData.view(event.pathParameters.animalId)
+    console.log(animal)
   } catch (error) {
     console.log(error.message)
   }
@@ -14,7 +16,7 @@ export const handler = async (event, context, callback) => {
   try {
     const options = {
       template: 'index',
-      title: 'Home',
+      title: `${Areas[animal.data[0].animal_area_pkid]}>${animal.data[0].animal_place}: ${animal.data[0].animal_subid}`,
       animals: animal.data
     }
 
