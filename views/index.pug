@@ -2,33 +2,18 @@ extends ./layouts/layout
 
 block content
   include widgets/cityList
-  include widgets/bodySize
-  .columns.is-multiline
-    each animal in animals
-      - let gender = (animal.animal_sex === 'M') ? '公' : '母'
-      .column.is-2
-        .card
-          a(href= './info/' + animal.animal_id)
-            img.card-img-top.lozad(data-src= animal.album_file onerror='this.src="https://cdn-noranoie.0x427567.com/images/error.svg"' style='height:15rem;')
-          .card-content
-            ul
-              li
-                span.card-text= '城市：' + cityList[animal.animal_area_pkid]
-              li
-                span.card-text= '種類：' + animal.animal_kind
-              li
-                span.card-text= '性別：' + gender
-              li
-                span.card-text= '體型：' + bodySize[animal.animal_bodytype]
-              li
-                span.card-text= '毛色：' + animal.animal_colour
-  .row
-    ul.pagination
-      if (currentPage === 1)
-        li.page-item.disabled
-          a.page-link(href='#') 上一頁
-      else
-        li.page-item
-          a.page-link(href='/?page=' + prePage) 上一頁
-      li.page-item
-        a.page-link(href='/?page=' + nextPage) 下一頁
+
+  div(class='section')
+    div(class='columns is-multiline')
+      each animal in animals
+        div(class='column is-one-third')
+          div(class='card')
+            div(class='card-image')
+              figure(class='image is-5by4')
+                a(href=`/info/${animal.animal_id}`)
+                  img(src= animal.album_file)
+            div(class='card-content')
+              div(class='content')
+                div(class='tags')
+                  span(class='tag')= cityList[animal.animal_area_pkid]
+                  span(class='tag')= animal.animal_kind

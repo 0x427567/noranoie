@@ -4,15 +4,23 @@ html
     meta(charset='utf-8')
     meta(http-equiv='x-dns-prefetch-control' content='on')
     meta(name='robots' content='all')
-    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    title= title
-    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' integrity='sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=' crossorigin='anonymous')
-    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css' integrity='sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw=' crossorigin='anonymous')
+    title= title + ' | 野良の家'
+    script(defer src='https://use.fontawesome.com/releases/v5.5.0/js/all.js' integrity='sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0' crossorigin='anonymous')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css' integrity='sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=' crossorigin='anonymous')
   body
-    nav.navbar(role='navigation' aria-label='main navigation')
-      .navbar-brand
-        a.navbar-item(href='/') 野良の家
+    nav(class='navbar is-fixed-top is-light' role='navigation' aria-label='main navigation')
+      div(class='navbar-brand')
+        a(class='navbar-item' href='/') 野良の家
+        a(class='navbar-burger burger' role='button' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample')
+          span(aria-hidden='true')
+          span(aria-hidden='true')
+          span(aria-hidden='true')
+      div(class='navbar-menu' id='navbarBasicExample')
+        div(class='navbar-start')
+          a(class='navbar-item' href='/') 首頁
+          a(class='navbar-item' href='/about') 關於我們
     block content
     block javascript
       script(src='https://cdn.jsdelivr.net/npm/lozad@1.0.6/dist/lozad.min.js')
