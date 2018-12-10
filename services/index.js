@@ -14,7 +14,7 @@ export const handler = async (event, context, callback) => {
   try {
     const options = {
       template: 'index',
-      title: 'Home',
+      title: '首頁',
       animals: animals.data
     }
 
