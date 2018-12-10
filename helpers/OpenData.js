@@ -9,7 +9,7 @@ export default class OpenData {
   static async list () {
     const params = queryString.stringify({
       UnitId: 'QcbUEzN6E6DL',
-      '$top': 30
+      '$top': 15
     })
 
     return axios.get(`${apiUrl}?${params}`)
