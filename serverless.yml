@@ -47,9 +47,3 @@ functions:
       - http:
           path: /about
           method: get
-  data-gov-tw-query:
-    handler: opendata/data-gov-tw.query
-    events:
-      - http:
-          path: /opendata/data.gov.tw
-          method: get
