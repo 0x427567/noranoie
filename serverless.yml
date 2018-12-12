@@ -15,7 +15,7 @@ provider:
   memorySize: 256
   timeout: 5
   deploymentBucket:
-    name: noranoie-deploys
+    name: noranoie-deploies
 
 plugins:
   - serverless-webpack
