@@ -5,6 +5,7 @@ import pug from 'pug'
 const basePath = './views'
 const template = {
   index: `${basePath}/index.pug`,
+  info: `${basePath}/info.pug`,
   about: `${basePath}/about.pug`
 }
 
