@@ -12,7 +12,7 @@ provider:
   stage: develop
   region: ap-northeast-1
   profile: default
-  memorySize: 128
+  memorySize: 256
   timeout: 5
   deploymentBucket:
     name: noranoie-deploys
