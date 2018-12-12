@@ -12,10 +12,10 @@ provider:
   stage: develop
   region: ap-northeast-1
   profile: default
-  memorySize: 128
+  memorySize: 256
   timeout: 5
   deploymentBucket:
-    name: noranoie-deploys
+    name: noranoie-deploies
 
 plugins:
   - serverless-webpack
@@ -42,14 +42,8 @@ functions:
               paths:
                 animalId: true
   about:
-    handler: functions/about.index
+    handler: services/about.handler
     events:
       - http:
           path: /about
-          method: get
-  data-gov-tw-query:
-    handler: opendata/data-gov-tw.query
-    events:
-      - http:
-          path: /opendata/data.gov.tw
           method: get
