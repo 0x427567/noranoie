@@ -6,12 +6,24 @@ This project is about stray animals, we hope this project can help more stray an
 
 All data is gather from http://data.coa.gov.tw/Query/ServiceTransDetail.aspx?id=QcbUEzN6E6DL, this is a open data project about stray animals in Taiwan.
 
-## How To Use
+## How To Deploy
 
-1. Install [Node.js](https://nodejs.org/)
-2. Install [Serverless Framework](https://serverless.com/)
-3. Config Serverless Framework
-4. Install [Yarn](https://yarnpkg.com/)
-5. git clone https://github.com/0x427567/noranoie.git
-6. yarn install
-7. serverless deploy -v
+You must have an AWS account before you deploy the service.
+
+**Step 1**
+
+```
+yarn install
+```
+
+**Step 2**
+
+```
+yarn deploy
+```
+
+## Local Testing
+
+```
+yarn offline
+```
