@@ -42,7 +42,7 @@ functions:
               paths:
                 animalId: true
   about:
-    handler: functions/about.index
+    handler: services/about.handler
     events:
       - http:
           path: /about
