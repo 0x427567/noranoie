@@ -11,6 +11,12 @@ block content
       ul
         li
           a(href='/') 野良の家
+        li(class='is-active')
+          a(href='#')= cityList[animal.animal_area_pkid]
+        li(class='is-active')
+          a(href='#')= animal.shelter_name
+        li(class='is-active')
+          a(href='#')= animal.animal_subid
     div(class='container')
       table(class='table is-fullwidth')
         tbody
