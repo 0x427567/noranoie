@@ -3,12 +3,12 @@ package main
 import (
 	"context"
 	"log"
-	"net/http"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	ginadapter "github.com/awslabs/aws-lambda-go-api-proxy/gin"
-	"github.com/gin-gonic/gin"
+
+	"github.com/0x427567/noranoie/internal/pkg/noranoie/routers"
 )
 
 var ginLambda *ginadapter.GinLambda
@@ -16,25 +16,7 @@ var ginLambda *ginadapter.GinLambda
 func init() {
 	log.Printf("Gin cold start")
 
-	router := gin.Default()
-
-	router.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "")
-	})
-
-	router.GET("/about", func(c *gin.Context) {
-		c.String(http.StatusOK, "")
-	})
-
-	router.GET("/animal", func(c *gin.Context) {
-		c.String(http.StatusOK, "")
-	})
-
-	router.GET("/animal/:id", func(c *gin.Context) {
-		c.String(http.StatusOK, "")
-	})
-
-	ginLambda = ginadapter.New(router)
+	ginLambda = ginadapter.New(routers.GetRouters())
 }
 
 func handler(ctx context.Context, req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
